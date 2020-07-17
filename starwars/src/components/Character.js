@@ -5,9 +5,11 @@ import Profile from './Profile';
 import axios from 'axios';
 
 
-function Character(){
-    const [character, setCharacter] = useState([]);
+function CharacterOne(){
+    const [character, setCharacter] = useState([0]);     
+    const [currentId, setCurrentId] = useState(null)
     
+        
     const promise =axios.get('https://swapi.dev/api/people/')
     
     useEffect(() => { 
@@ -16,16 +18,26 @@ function Character(){
             setCharacter(res.data.results)
             })         
         .catch(err => {console.log('Err', err)});
-    }, [])
+    }, [])   
 
 
- return (
-    <div className="character">
-        <Header characters={character} />  
-        <Profile className="hide"/>
+
+ return (     
+    <div className="character" >
+        {
+            character.map(ch =>{
+                console.log('NAME:', ch.name)
+                return (
+                <div>
+                    <Header ch={ch} key={ch.id}/>  
+                   
+                    <Profile className="hide" ch={ch}/>
+                </div>)
+            })
+        }
     </div>
  );
 }
 
-export default Character;
+export default CharacterOne;
 

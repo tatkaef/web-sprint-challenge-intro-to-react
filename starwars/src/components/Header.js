@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Headerstyle from './Headerstyle';
 
 
 function Header(props) {
-    const { characters } = props;
-    const [name, setName] = useState('');
+    const { ch } = props; 
+       
+    
 
-
-    if (characters[0]) {
-    console.log('Name', characters[0].name);
-    setName(characters[0].name)    
-    }
+   
 
  return (
-   <div className="header">
-       <div>Name: {name}</div>
-       <button>+</button>
+   <div className="header" >
+       <Headerstyle><h2>{ch.name}</h2></Headerstyle>
+      
         
    </div>
  );
