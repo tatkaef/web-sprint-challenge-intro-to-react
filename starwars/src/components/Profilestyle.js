@@ -1,25 +1,26 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Txt = styled.div`
-    background-color: pink;        
-    width: 800px;
+  display: flex;
+  justify-content: center;
+  margin: 0 300px;
+  border: 4px dotted red;
+  background-color: pink;
+  width: 60%;
 
-    .close-pr{
-        display: none;
-    }
-    
-    .open-pr{
-        display:flex;
-    }
-    h3{
-        color: darkblue;
-    }
-    div{
-        display: flex;
-        align-items : center; 
-        background-color: pink;            
-    }
-        
-    `
+  .close-pr {
+    display: none;
+  }
+
+  h3 {
+    color: darkblue;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    // border: 1px solid black;
+  }
+`;
 
 export default Txt;
